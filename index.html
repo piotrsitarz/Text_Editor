@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Text Editor">
+    <meta name="keywords" content="">
+    <meta name="author" content="Piotr Sitarz">
+    <title>Text Editor</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/1474060efe.js"></script>
+  </head>
+  <body>
+  <div id="panel">
+      <button class="bold" onclick="execCmd('bold');" data-tooltip="Bold"><i class="fa fa-bold"></i></button>
+      <button class="italic" onclick="execCmd('italic');" data-tooltip="Italic"><i class="fa fa-italic"></i></button>
+      <button class="underline" onclick="execCmd('underline');" data-tooltip="Underline"><i class="fa fa-underline"></i></button>
+      <button class="strikethrough" onclick="execCmd('strikeThrough');" data-tooltip="Strikethrough"><i class="fa fa-strikethrough"></i></button> 
+      <button class="align-left " onclick="execCmd('justifyLeft');" data-tooltip="Align Left"><i class="fa fa-align-left "></i></button>
+      <button class="align-center" onclick="execCmd('justifyCenter');" data-tooltip="Align Center"><i class="fa fa-align-center"></i></button>   
+      <button class="align-right" onclick="execCmd('justifyRight');" data-tooltip="Align Right"><i class="fa fa-align-right"></i></button>
+      <button class="cut" onclick="execCmd('cut');" data-tooltip="Cut"><i class="fa fa-scissors"></i></button> 
+      <button class="copy" onclick="execCmd('copy');" data-tooltip="Copy"><i class="fa fa-files-o"></i></button> 
+      <button class="indent" onclick="execCmd('indent');" data-tooltip="Indent"><i class="fa fa-indent"></i></button> 
+      <button class="outdent" onclick="execCmd('outdent');" data-tooltip="Outdent"><i class="fa fa-dedent"></i></button>              
+      <button class="subscript" onclick="execCmd('subscript');" data-tooltip="Subscript"><i class="fa fa fa-subscript"></i></button> 
+      <button class="superscript" onclick="execCmd('superscript');" data-tooltip="Superscript"><i class="fa fa-superscript"></i></button> 
+      <button class="undo" onclick="execCmd('undo');" data-tooltip="Undo"><i class="fa fa fa-undo"></i></button>             <button class="repeat" onclick="execCmd('redo');" data-tooltip="Repeat"><i class="fa fa-repeat"></i></button> 
+      <button class="UnorderedList" onclick="execCmd('insertUnorderedList');" data-tooltip="Unordered List"><i class="fa fa-list-ul"></i></button> 
+      <button class="OrderedList" onclick="execCmd('insertOrderedList');" data-tooltip="Ordered List"><i class="fa fa-list-ol"></i></button> 
+      <button class="paragraph" onclick="execCmd('insertParagraph');" data-tooltip="Paragraph"><i class="fa fa-paragraph"></i></button>
+      <b>Font Color:</b><input type="color" onchange="execCmdWithArg('foreColor',this.value);">
+      <b>Background:</b><input type="color" onchange="execCmdWithArg('hiliteColor',this.value);"> 
+      <b>Font Size:</b><select onchange="execCmdWithArg('fontSize',this.value);">
+          <option value="0"></option>
+          <option value="1">xx-small</option>
+          <option value="2">x-small</option>
+          <option value="3">small</option>
+          <option value="4">medium</option>
+          <option value="5">large</option>
+          <option value="6">x-large</option>
+          <option value="7">xx-large</option>
+      </select>
+      <b>Font Family:</b><select onchange="execCmdWithArg('fontName',this.value);">
+          <option value="Times News Roman">Times News Roman</option>
+          <option value="Arial">Arial</option>
+          <option value="Comic Sans MS">Comic Sans MS</option>
+          <option value="Courier">Courier</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Tahoma">Tahoma</option>
+          <option value="Verdana">Verdana</option>
+      </select>      
+  </div>
+  <iframe name="TextField">
+  </iframe>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="script.js"></script>
+  </body>
+</html>
